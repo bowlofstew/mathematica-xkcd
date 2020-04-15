@@ -1,8 +1,16 @@
 # XKCD Charting Library
 
+## Installation
+
+1. Clone the repository to a path, `git clone git@github.com:bowlofstew/mathematica-xkcd.git`
+2. In your notebook, `AppendTo[$Path, "REPO_CHECKOUT_PATH_FROM_ABOVE"]`
+3. `Needs["xkcd`"]`
+
 ## Examples
 
 ### Standard Plot
+
+![](images/standard.png?raw=true)
 
 ```
 f1[x_] := 5 + 50 (1 + Erf[x - 5]);
@@ -15,6 +23,8 @@ xkcdConvert[Plot[{f1[x], f2[x]}, {x, 0, 10},
 
 ### Bar Chart
 
+![](images/bar.png?raw=true)
+
 ```
 xkcdConvert[BarChart[{10, 1}, ChartLabels -> {"XKCD", "Others"},
   PlotLabel -> "Popularity of questions on MMA.SE",
@@ -22,6 +32,8 @@ xkcdConvert[BarChart[{10, 1}, ChartLabels -> {"XKCD", "Others"},
 ```
 
 ### Bar Chart with Labels
+
+![](images/bar-labels.png?raw=true)
 
 ```
 xkcdConvert[BarChart[{1, 10}, ChartLegends -> {"Others", "XKCD"},
@@ -31,12 +43,16 @@ xkcdConvert[BarChart[{1, 10}, ChartLegends -> {"Others", "XKCD"},
 
 ### Pie Chart
 
+![](images/pie.png?raw=true)
+
 ```
 xkcdConvert[PieChart[{9, 1}, ChartLabels -> {"XKCD", "Others"},
   PlotLabel -> "Popularity of questions on MMA.SE"]]
 ```
 
 ### List Plot
+
+![](images/line.png?raw=true)
 
 ```
 xkcdConvert[
@@ -45,11 +61,15 @@ xkcdConvert[
 
 ### 3-D Plots
 
+![](images/3d.png?raw=true)
+
 ```
 xkcdConvert[BarChart3D[{3, 2, 1}, ChartStyle -> Red, FaceGrids -> None,
   Method -> {"Canvas" -> None}, ViewPoint -> {-2, -4, 1},
   PlotLabel -> "This is just silly"]]
 ```
+
+![](images/useful.png?raw=true)
 
 ```
 xkcdConvert[
